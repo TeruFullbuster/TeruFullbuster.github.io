@@ -1,43 +1,91 @@
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/assets/css/style-aseguradoras.css">
+<div class="Formulario">
 
-<div class="loader">
-    <div class="div-load">
-        <img src="assets/img/loader.gif" width="200" />	
-    </div>
-  </div>
 
-<form id="multicoti">
-
-    <select name="Marca" id="slc-marcas" required></select>
-
-    <select name="Modelo" id="slc-anio" required></select>
+    <div class="loader">
+        <div class="div-load">
+            <img src="assets/img/loader.gif" width="200" />	
+        </div>
+      </div>
     
-    <select name="Desc" id="slc-descripcion" required></select>
+    <form id="multicoti" class="formu">
+        <div class="vehiculo">
+            <select name="Marca" id="slc-marcas" required>
+                <option value="">Selecciona la marca</option>
+                <option value="">Cargando... </option>
+                </select>
+                <select name="Modelo" id="slc-anio" required>
+                <option value="" >Selecciona el modelo</option>
+                <option value="">Cargando... </option>
+                </select>
+                <select name="Desc" id="slc-descripcion" required>
+                <option value="" >Selecciona la submarca</option>
+                <option value="">Cargando... </option>
+                </select>
+            
+        </div>
+        
+        <br>
+        <input type="text" id="cepe" placeholder="Introduce tu numero postal" required>
+        <select type="Date" id="Fnaci" placeholder="Introduce tu Fecha de Nacimiento" required> </select>
+        
     
-    <select name="DescCAXA" id="slc-descripcionCompletaAXA"></select>
+            <select id="genero" name="genero" style="background-color: #e0e0e0;" required>
+                <option value=""  selected disabled>Selecciona tu género</option>
+                <option value="0" >Masculino</option>
+                <option value="1" >Femenino</option>
+            </select>
     
-    <select name="DescCQualitas" id="slc-descripcionCompletaQualitas"></select>
+        <p>Selecciona la versión especifica de tu vehiculo para una cotización precisa.</p>
+        <h1>Aseguradoras disponibles para ese modelo</h1>
+        
+        <select name="DescCAXA" id="slc-descripcionCompletaAXA"></select>
+        <div id="BanderaAXA"><p>En AXA te sale en: </p><span id="DatoAXA"> </span> </div>
+        
+        
+        <select name="DescCQualitas" id="slc-descripcionCompletaQualitas"></select>
+        <div id="BanderaQualitas"><p>En Qualitas te sale en: </p><span id="DatoQua"> </span> </div>    
     
-    <input type="text" id="cepe" placeholder="Introduce tu numero postal" required>
-    <input type="text" id="FNaci" placeholder="Introduce tu Fecha de Nacimiento" required>
+        <button id="Consulta">Consulta</button>
+    </form>
+
     
+</div>
 
-        <select id="genero" name="genero" style="background-color: #e0e0e0;" required>
-            <option value=""  selected disabled>Selecciona tu género</option>
-            <option value="0" >Masculino</option>
-            <option value="1" >Femenino</option>
-        </select>
-
-    <button id="Consulta">Consulta</button>
-
-    <div id="BanderaAXA"> Algo aqui llego de AXA</div>
-    
-    <div id="BanderaQualitas"> Algo aqui llego de Qualitas</div>
-
-
-</form>
-
-
+<script>
+    		 function fechapermitida() {
+        localStorage.clear();
+        function algo(){
+            let stringtabla = '<option value=""  selected disabled>Selecciona tu edad</option>';
+  
+          for(let index = 19;index <= 80; index++){
+            let today = new Date();
+            let dd = today.getDate();
+            let mm = today.getMonth() + 1; //January is 0!
+            let yyyy = today.getFullYear() - index;
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+            today = yyyy + '-' + mm + '-' + dd;
+            
+            let fila = '<option value="'
+            fila += today + '"';
+            fila += ">";
+            fila +=  index + "</option>";
+           
+  
+            stringtabla += fila;
+            }
+            return stringtabla;
+        }
+            document.getElementById('Fnaci').innerHTML =  algo();
+        
+    } 
+    fechapermitida();
+</script>
 
 <script src="/assets/js/control.js"></script>

@@ -381,37 +381,53 @@ $(document).ready(function () {
             descri = document.getElementById('slc-descripcion').value
             cvicAXA = document.getElementById('slc-descripcionCompletaAXA').value || "0"
             cvicQua = document.getElementById('slc-descripcionCompletaQualitas').value || "0"
+            CP = document.getElementById('cepe').value;
 
-            CP = "54770";
-            FNacimiento = "07/08/1996";
-            genero = 1;
+            var FNaci = $("#Fnaci").val();
+            var genero = $('#genero').val();
+       
+            
             $('.loader').css("display","flex");
             if(cvicAXA != null && cvicAXA != "0"){
                 $.ajax({
                     type: "GET",
-                    url: `https://wscotizacion.segurointeligente.mx/Cotizacion.svc/ObtenerCotizacionAseg?Usuario=SIWS&Pass=Gmag2020*&Marca=${marca}&Modelo=${anio}&Des=${descri}&IDGrupo=466&Cobertura=AMPLIA&Aseguradora=AXA&Cevic=${cvicAXA}&CPostal=${CP}&NombreFPago=CONTADO&Fnacimiento=${FNacimiento}&Genero=${genero}`,
+                    url: `https://wscotizacion.segurointeligente.mx/Cotizacion.svc/ObtenerCotizacionAseg?Usuario=SIWS&Pass=Gmag2020*&Marca=${marca}&Modelo=${anio}&Des=${descri}&IDGrupo=466&Cobertura=AMPLIA&Aseguradora=AXA&Cevic=${cvicAXA}&CPostal=${CP}&NombreFPago=CONTADO&Fnacimiento=${FNaci}&Genero=${genero}`,
                     async: true,
                     success: function (datos) {
                         console.log(datos)
-                        document.getElementById('BanderaAXA').textContent = datos.CotAI.PrimaTotal;
+                        if(datos.CotAI.PrimaTotal != null){
+                        document.getElementById('DatoAXA').textContent = datos.CotAI.PrimaTotal;
                         $('.loader').css("display","none");
+                    }else{
+                            
+                        document.getElementById('BanderaQualitas').style.display = "none";
+                    }
                     }
             })
             }else{
-                    alert("Por aca paso AXA")
+                alert("AXA no asegura ese vehiculo")
+                $('.loader').css("display","none");
             }
             if(cvicQua != null && cvicQua != "0"){
                 $.ajax({
                     type: "GET",
-                    url: `https://wscotizacion.segurointeligente.mx/Cotizacion.svc/ObtenerCotizacionAseg?Usuario=SIWS&Pass=Gmag2020*&Marca=${marca}&Modelo=${anio}&Des=${descri}&IDGrupo=466&Cobertura=AMPLIA&Aseguradora=Qualitas&Cevic=${cvicQua}&CPostal=${CP}&NombreFPago=CONTADO&Fnacimiento=${FNacimiento}&Genero=${genero}`,
+                    url: `https://wscotizacion.segurointeligente.mx/Cotizacion.svc/ObtenerCotizacionAseg?Usuario=SIWS&Pass=Gmag2020*&Marca=${marca}&Modelo=${anio}&Des=${descri}&IDGrupo=466&Cobertura=AMPLIA&Aseguradora=Qualitas&Cevic=${cvicQua}&CPostal=${CP}&NombreFPago=CONTADO&Fnacimiento=${FNaci}&Genero=${genero}`,
                     async: true,
                     success: function (datos) {
                         console.log(datos)
-                        document.getElementById('BanderaQualitas').textContent = datos.CotAI.PrimaTotal;
+                        if(datos.CotAI.PrimaTotal != null){
+                            document.getElementById('BanderaQualitas').textContent = datos.CotAI.PrimaTotal;
+                            $('.loader').css("display","none");
+                        }else{
+                            
+                            document.getElementById('BanderaQualitas').style.display = "none";
+                        }
+                        
                     }
                 })
             }else{
-                alert("Por aca paso Qua")
+                alert("Qualitas no asegura ese vehiculo")
+                $('.loader').css("display","none");
             }
 
     });
