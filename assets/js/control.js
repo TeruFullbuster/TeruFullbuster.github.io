@@ -8,6 +8,7 @@ $(document).ready(function () {
         
     $("#BanderaAXA").hide();
     $("#BanderaQualitas").hide();
+    $("#BanderaGNP").hide();
 
     $("#slc-marcas").load("click", function () {
         $.ajax({
@@ -335,7 +336,7 @@ $(document).ready(function () {
                     })
 
 
-                    $("#slc-descripcionCompleta").empty().append(options);
+                    $("#slc-descripcionCompletaQualitas").empty().append(options);
 
                 }
             }).fail(function (e) {
@@ -374,6 +375,63 @@ $(document).ready(function () {
     })
 
 
+    $("#slc-descripcion").change(function (e) {
+        let marca = $("#slc-marcas").val()
+        let anio = $("#slc-anio").val()
+        let desc = $("#slc-descripcion").val()
+        
+        if (marca !== localStorage.getItem('marca') || anio !== localStorage.getItem('modelo') || desc !== localStorage.getItem('descripcion')) {
+            $.ajax({
+                type: "GET",
+                url: `https://wscotizacion.segurointeligente.mx/Cotizacion.svc/ObtenerDescripcionesCompleta?Usuario=SIWS&Pass=Gmag2020*&Marca=${marca}&Modelo=${anio}&Des=${desc}&IDGrupo=466&Cobertura=AMPLIA&Aseguradora=GNP`,
+                async: true,
+                success: function (datos) {
+                    let options = ""
+                    $.map(datos, function (a) {
+                        options += `
+                        <option value="${a.CEVIC}">${a.Descripcion}</option>`
+                    })
+
+
+                    $("#slc-descripcionCompletaGNP").empty().append(options);
+
+                }
+            }).fail(function (e) {
+                console.log(e)
+            });
+        } else {
+            if (localStorage.getItem('vecesConsultaDescripcionCompleta') == 0) {
+                $.ajax({
+                    type: "GET",
+                    url: `https://wscotizacion.segurointeligente.mx/Cotizacion.svc/ObtenerDescripcionesCompleta?Usuario=SIWS&Pass=Gmag2020*&Marca=${marca}&Modelo=${anio}&Des=${desc}&IDGrupo=466&Cobertura=AMPLIA&Aseguradora=GNP`,
+                    async: true,
+                    success: function (datos) {
+                        if(datos.length != 0 ){
+                            console.log(datos)
+                            let options = ""
+                        $.map(datos, function (a) {
+                            options += `
+                            <option value="${a.CEVIC}">${a.Descripcion}</option>`
+                        })
+                        localStorage.setItem('vecesConsultaDescripcionC', 1);
+
+                        $("#slc-descripcionCompletaGNP").empty().append(options);
+                        $("#BanderaGNP").show()
+                        $("#slc-descripcionCompletaGNP").show()
+
+                        }else{
+                            document.getElementById('BanderaGNP').style.display = "none";
+                            document.getElementById('slc-descripcionCompletaGNP').style.display = "none";
+                        }
+                    }
+                }).fail(function (e) {
+                    console.log(e)
+                });
+            }
+        }
+    })
+
+
     $("#multicoti").on('submit', function (evt) {
             evt.preventDefault();    
             marca = document.getElementById('slc-marcas').value
@@ -381,6 +439,7 @@ $(document).ready(function () {
             descri = document.getElementById('slc-descripcion').value
             cvicAXA = document.getElementById('slc-descripcionCompletaAXA').value || "0"
             cvicQua = document.getElementById('slc-descripcionCompletaQualitas').value || "0"
+            cvicGNP = document.getElementById('slc-descripcionCompletaGNP').value || "0"
             CP = document.getElementById('cepe').value;
 
             var FNaci = $("#Fnaci").val();
@@ -388,6 +447,7 @@ $(document).ready(function () {
        
             
             $('.loader').css("display","flex");
+
             if(cvicAXA != null && cvicAXA != "0"){
                 $.ajax({
                     type: "GET",
@@ -395,18 +455,21 @@ $(document).ready(function () {
                     async: true,
                     success: function (datos) {
                         console.log(datos)
+                        console.log("AXA")
                         if(datos.CotAI.PrimaTotal != null){
                         document.getElementById('DatoAXA').textContent = datos.CotAI.PrimaTotal;
                         $('.loader').css("display","none");
                     }else{
                             
-                        document.getElementById('BanderaQualitas').style.display = "none";
+                        document.getElementById('BanderaAXA').style.display = "none";
+                        document.getElementById('slc-descripcionCompletaAXA').style.display = "none";
+                        $('.loader').css("display","none");
                     }
                     }
             })
             }else{
                 alert("AXA no asegura ese vehiculo")
-                $('.loader').css("display","none");
+                
             }
             if(cvicQua != null && cvicQua != "0"){
                 $.ajax({
@@ -415,19 +478,42 @@ $(document).ready(function () {
                     async: true,
                     success: function (datos) {
                         console.log(datos)
+                        console.log("Qua")
                         if(datos.CotAI.PrimaTotal != null){
-                            document.getElementById('BanderaQualitas').textContent = datos.CotAI.PrimaTotal;
+                            document.getElementById('DatoQua').textContent = datos.CotAI.PrimaTotal;
                             $('.loader').css("display","none");
                         }else{
-                            
                             document.getElementById('BanderaQualitas').style.display = "none";
+                            document.getElementById('slc-descripcionCompletaQua').style.display = "none";
+                            $('.loader').css("display","none");
                         }
                         
                     }
                 })
             }else{
                 alert("Qualitas no asegura ese vehiculo")
-                $('.loader').css("display","none");
+                
+            }
+            if(cvicGNP != null && cvicGNP != "0"){
+                $.ajax({
+                    type: "GET",
+                    url: `https://wscotizacion.segurointeligente.mx/Cotizacion.svc/ObtenerCotizacionAseg?Usuario=SIWS&Pass=Gmag2020*&Marca=${marca}&Modelo=${anio}&Des=${descri}&IDGrupo=466&Cobertura=AMPLIA&Aseguradora=GNP&Cevic=${cvicGNP}&CPostal=${CP}&NombreFPago=CONTADO&Fnacimiento=${FNaci}&Genero=${genero}`,
+                    async: true,
+                    success: function (datos) {
+                        console.log(datos)
+                        console.log("GNP")
+                        if(datos.CotAI.PrimaTotal != null){
+                        document.getElementById('DatoGNP').textContent = datos.CotAI.PrimaTotal;
+                        $('.loader').css("display","none");
+                    }else{
+                            
+                        document.getElementById('DatoGNP').style.display = "none";
+                    }
+                    }
+            })
+            }else{
+                alert("GNP no asegura ese vehiculo")
+                
             }
 
     });
