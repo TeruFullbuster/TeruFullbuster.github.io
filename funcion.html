@@ -1,0 +1,43 @@
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/style-aseguradoras.css">
+
+<div class="loader">
+    <div class="div-load">
+        <img src="assets/img/loader.gif" width="200" />	
+    </div>
+  </div>
+
+<form id="multicoti">
+
+    <select name="Marca" id="slc-marcas" required></select>
+
+    <select name="Modelo" id="slc-anio" required></select>
+    
+    <select name="Desc" id="slc-descripcion" required></select>
+    
+    <select name="DescCAXA" id="slc-descripcionCompletaAXA"></select>
+    
+    <select name="DescCQualitas" id="slc-descripcionCompletaQualitas"></select>
+    
+    <input type="text" id="cepe" placeholder="Introduce tu numero postal" required>
+    <input type="text" id="FNaci" placeholder="Introduce tu Fecha de Nacimiento" required>
+    
+
+        <select id="genero" name="genero" style="background-color: #e0e0e0;" required>
+            <option value=""  selected disabled>Selecciona tu género</option>
+            <option value="0" >Masculino</option>
+            <option value="1" >Femenino</option>
+        </select>
+
+    <button id="Consulta">Consulta</button>
+
+    <div id="BanderaAXA"> Algo aqui llego de AXA</div>
+    
+    <div id="BanderaQualitas"> Algo aqui llego de Qualitas</div>
+
+
+</form>
+
+
+
+<script src="/assets/js/control.js"></script>
