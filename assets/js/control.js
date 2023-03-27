@@ -4,11 +4,7 @@ $(document).ready(function () {
     /*$("#slc-anio").hide()
     $("#slc-descripcion").hide()
     $("#slc-descripcionCompleta").hide()*/
-    
-        
-    $("#BanderaAXA").hide();
-    $("#BanderaQualitas").hide();
-    $("#BanderaGNP").hide();
+
 
     $("#slc-marcas").load("click", function () {
         $.ajax({
@@ -277,10 +273,11 @@ $(document).ready(function () {
                         options += `
                         <option value="${a.CEVIC}">${a.Descripcion}</option>`
                     })
-                    $("#BanderaAXA").show();
+                    
+                    
                     $("#slc-descripcionCompletaAXA").show()
                     $("#slc-descripcionCompletaAXA").empty().append(options);
-                    
+                    $("#divAXA1").show();
 
                 }
             }).fail(function (e) {
@@ -303,8 +300,7 @@ $(document).ready(function () {
                         localStorage.setItem('vecesConsultaDescripcionC', 1);
 
                             $("#slc-descripcionCompletaAXA").empty().append(options);
-                            $("#BanderaAXA").show();
-                            $("#slc-descripcionCompletaAXA").show()
+                             $("#divAXA1").show();
                         }else{
                             document.getElementById('BanderaAXA').style.display = "none";
                             document.getElementById('slc-descripcionCompletaAXA').style.display = "none";
@@ -335,8 +331,8 @@ $(document).ready(function () {
                         <option value="${a.CEVIC}">${a.Descripcion}</option>`
                     })
 
-
-                    $("#slc-descripcionCompletaQualitas").empty().append(options);
+                    $("#divQua1").show();
+                    $("#slc-descripcionCompletaQua").empty().append(options);
 
                 }
             }).fail(function (e) {
@@ -358,13 +354,12 @@ $(document).ready(function () {
                         })
                         localStorage.setItem('vecesConsultaDescripcionC', 1);
 
-                        $("#slc-descripcionCompletaQualitas").empty().append(options);
-                        $("#BanderaQualitas").show()
-                        $("#slc-descripcionCompletaQualitas").show()
+                        $("#slc-descripcionCompletaQua").empty().append(options);
+                        $("#divQua1").show();
 
                         }else{
                             document.getElementById('BanderaQualitas').style.display = "none";
-                            document.getElementById('slc-descripcionCompletaQualitas').style.display = "none";
+                            document.getElementById('slc-descripcionCompletaQua').style.display = "none";
                         }
                     }
                 }).fail(function (e) {
@@ -392,7 +387,7 @@ $(document).ready(function () {
                         <option value="${a.CEVIC}">${a.Descripcion}</option>`
                     })
 
-
+                    $("#divGNP1").show();
                     $("#slc-descripcionCompletaGNP").empty().append(options);
 
                 }
@@ -416,8 +411,7 @@ $(document).ready(function () {
                         localStorage.setItem('vecesConsultaDescripcionC', 1);
 
                         $("#slc-descripcionCompletaGNP").empty().append(options);
-                        $("#BanderaGNP").show()
-                        $("#slc-descripcionCompletaGNP").show()
+                        $("#divGNP1").show();
 
                         }else{
                             document.getElementById('BanderaGNP').style.display = "none";
@@ -438,7 +432,7 @@ $(document).ready(function () {
             anio = document.getElementById('slc-anio').value
             descri = document.getElementById('slc-descripcion').value
             cvicAXA = document.getElementById('slc-descripcionCompletaAXA').value || "0"
-            cvicQua = document.getElementById('slc-descripcionCompletaQualitas').value || "0"
+            cvicQua = document.getElementById('slc-descripcionCompletaQua').value || "0"
             cvicGNP = document.getElementById('slc-descripcionCompletaGNP').value || "0"
             CP = document.getElementById('cepe').value;
 
@@ -460,7 +454,6 @@ $(document).ready(function () {
                         document.getElementById('DatoAXA').textContent = datos.CotAI.PrimaTotal;
                         $('.loader').css("display","none");
                     }else{
-                            
                         document.getElementById('BanderaAXA').style.display = "none";
                         document.getElementById('slc-descripcionCompletaAXA').style.display = "none";
                         $('.loader').css("display","none");
@@ -507,7 +500,9 @@ $(document).ready(function () {
                         $('.loader').css("display","none");
                     }else{
                             
-                        document.getElementById('DatoGNP').style.display = "none";
+                        document.getElementById('BanderaGNP').style.display = "none";
+                        document.getElementById('slc-descripcionCompletaGNP').style.display = "none";
+                        $('.loader').css("display","none");
                     }
                     }
             })

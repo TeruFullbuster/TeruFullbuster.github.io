@@ -39,20 +39,26 @@
     
         <p>Selecciona la versión especifica de tu vehiculo para una cotización precisa.</p>
         <h1>Aseguradoras disponibles para ese modelo</h1>
-        
-        <select name="DescCAXA" id="slc-descripcionCompletaAXA"></select>
-        <div id="BanderaAXA"><p>En AXA te sale en: </p><span id="DatoAXA"> </span> </div>
-        
-        
-        <select name="DescCQualitas" id="slc-descripcionCompletaQualitas"></select>
-        <div id="BanderaQualitas"><p>En Qualitas te sale en: </p><span id="DatoQua"> </span> </div>    
-        
-        <select name="DescCGNP" id="slc-descripcionCompletaGNP"></select>
-        <div id="BanderaGNP"><p>En GNP te sale en: </p><span id="DatoGNP"> </span> </div>
+
+        <div  class="divAXA" id="divAXA1">
+            <select name="DescCAXA" id="slc-descripcionCompletaAXA" class="select1"></select>
+            <div id="BanderaAXA"class="BanderaAXA"><p class="item1">En AXA te sale en: </p><span class="item1" id="DatoAXA"> </span> <img class="item1"src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-AXA.png" alt=""></div>
+            
+        </div>
+        <br>
+        <div class="divQua" id="divQua1">
+            <select name="DescCQualitas" id="slc-descripcionCompletaQua" class="select1"></select>
+            <div id="BanderaQualitas" ><p class="item1">En Qualitas te sale en: </p><span id="DatoQua" class="item1"> </span> <img class="item1" src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-QUALITAS.png" alt=""></div>
+        </div>
+        <br>
+        <div class="divGNP" id="divGNP1">
+            <select name="DescCGNP" id="slc-descripcionCompletaGNP" class="select1"></select>
+            <div id="BanderaGNP"><p>En GNP te sale en: </p><span id="DatoGNP"> </span> <img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-GNP.png" alt=""> </div>
+            
+        </div>    
 
         <button id="Consulta">Consulta</button>
     </form>
-
     
 </div>
 
