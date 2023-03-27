@@ -31,7 +31,7 @@
         </div>
         
         <br>
-        <input type="text" id="cepe" placeholder="Introduce tu numero postal" required>
+        <input type="text" id="cepe" placeholder="Introduce tu numero postal" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" maxlength="5" required>
         <select type="Date" id="Fnaci" placeholder="Introduce tu Fecha de Nacimiento" required> </select>
         
     
@@ -47,25 +47,31 @@
         <div  class="divAXA" id="divAXA1">
             <select name="DescCAXA" id="slc-descripcionCompletaAXA" class="select1"></select>
             <div id="BanderaAXA"class="BanderaAXA">
-                <div><img src="https://imgs.search.brave.com/pkMOQ94jlT3sFnhJXF7Sl37aet250mUADNzEDIhQAkg/rs:fit:900:840:1/g:ce/aHR0cHM6Ly92ZWN0/b3JpZmllZC5jb20v/aW1hZ2VzL2JsdWUt/Y2FyLWljb24tMjMu/anBn" width="100%" alt=""> </div>
-                <div><p class="item1">En AXA te sale en: <span class="item1" id="DatoAXA"> </span> </p></div>
-                <div><a href="https://axaseguroauto.com/" target="_blank"><img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-AXA.png" alt=""></a></div>
+                <div class="imgBandera"><img src="https://imgs.search.brave.com/kJQY3hE46O5HFL_4vNITEM4zUtnFzINEwQjO_lJyPzg/rs:fit:600:424:1/g:ce/aHR0cHM6Ly9zdDIu/ZGVwb3NpdHBob3Rv/cy5jb20vMTUwNzgx/OS82NjkwL3YvNDUw/L2RlcG9zaXRwaG90/b3NfNjY5MDQxODkt/c3RvY2staWxsdXN0/cmF0aW9uLWJsdWUt/Y2FyLWljb24tb24t/d2hpdGUuanBn"  alt=""> </div>
+                <div class="PrecioBander"><h3 class="item1">Precio: <br>$<span class="item1" id="DatoAXA"> </span><br>Anual </h3></div>
+                <div class="MarcaBandera"><a href="https://axaseguroauto.com/" target="_blank"><img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-AXA.png" alt=""></a></div>
             </div>
-            
         </div>
         <br>
         <div class="divQua" id="divQua1">
-            <select name="DescCQualitas" id="slc-descripcionCompletaQua" class="select1"></select>
-            <div id="BanderaQualitas" ><p class="item1">En Qualitas te sale en: <span id="DatoQua" class="item1"> </span></p> <img class="item1" src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-QUALITAS.png" alt=""></div>
+            <select name="DescCQua" id="slc-descripcionCompletaQua" class="select1"></select>
+            <div id="BanderaQua"class="BanderaQua">
+                <div class="imgBandera"><img src="https://imgs.search.brave.com/kJQY3hE46O5HFL_4vNITEM4zUtnFzINEwQjO_lJyPzg/rs:fit:600:424:1/g:ce/aHR0cHM6Ly9zdDIu/ZGVwb3NpdHBob3Rv/cy5jb20vMTUwNzgx/OS82NjkwL3YvNDUw/L2RlcG9zaXRwaG90/b3NfNjY5MDQxODkt/c3RvY2staWxsdXN0/cmF0aW9uLWJsdWUt/Y2FyLWljb24tb24t/d2hpdGUuanBn"  alt=""> </div>
+                <div class="PrecioBander"><h3 class="item1">Precio: <br>$<span class="item1" id="DatoAXA"> </span><br>Anual </h3></div>
+                <div class="MarcaBandera"><a href="https://axaseguroauto.com/" target="_blank"><img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-Qualitas.png" alt=""></a></div>
+            </div>
         </div>
         <br>
         <div class="divGNP" id="divGNP1">
             <select name="DescCGNP" id="slc-descripcionCompletaGNP" class="select1"></select>
-            <div id="BanderaGNP"><p>En GNP te sale en: </p><span id="DatoGNP"> </span> <img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-GNP.png" alt=""> </div>
-            
-        </div>    
-
-        <button id="Consulta">Consulta</button>
+            <div id="BanderaGNP"class="BanderaGNP">
+                <div class="imgBandera"><img src="https://imgs.search.brave.com/kJQY3hE46O5HFL_4vNITEM4zUtnFzINEwQjO_lJyPzg/rs:fit:600:424:1/g:ce/aHR0cHM6Ly9zdDIu/ZGVwb3NpdHBob3Rv/cy5jb20vMTUwNzgx/OS82NjkwL3YvNDUw/L2RlcG9zaXRwaG90/b3NfNjY5MDQxODkt/c3RvY2staWxsdXN0/cmF0aW9uLWJsdWUt/Y2FyLWljb24tb24t/d2hpdGUuanBn"  alt=""> </div>
+                <div class="PrecioBander"><h3 class="item1">Precio: <br>$<span class="item1" id="DatoGNP"> </span><br>Anual </h3></div>
+                <div class="MarcaBandera"><a href="https://axaseguroauto.com/" target="_blank"><img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-GNP.png" alt=""></a></div>
+            </div>
+        </div>  
+        <br>
+        <button id="Consulta" class="btn-consulta">Consulta</button>
     </form>
     </div>
 </div>

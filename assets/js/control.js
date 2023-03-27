@@ -358,7 +358,7 @@ $(document).ready(function () {
                         $("#divQua1").show();
 
                         }else{
-                            document.getElementById('BanderaQualitas').style.display = "none";
+                 
                             document.getElementById('slc-descripcionCompletaQua').style.display = "none";
                         }
                     }
@@ -476,7 +476,7 @@ $(document).ready(function () {
                             document.getElementById('DatoQua').textContent = datos.CotAI.PrimaTotal;
                             $('.loader').css("display","none");
                         }else{
-                            document.getElementById('BanderaQualitas').style.display = "none";
+                            document.getElementById('BanderaQua').style.display = "none";
                             document.getElementById('slc-descripcionCompletaQua').style.display = "none";
                             $('.loader').css("display","none");
                         }

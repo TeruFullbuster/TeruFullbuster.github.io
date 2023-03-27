@@ -37,14 +37,43 @@
   display: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.divQua {
+  background-color:#ffffff;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.divGNP {
+  background-color:#ffffff;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .BanderaAXA{
-	  display: none;
+    display: grid;
     grid-template-columns: 30% 30% 30%;
     background: #ffffff;
     justify-content: center;
-    display: none;
     color: rgb(0, 0, 0);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.BanderaQua{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  background: #ffffff;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.BanderaGNP{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  background: #ffffff;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .Formulario{
 	width: 100%;
@@ -74,11 +103,27 @@
 .select1{
   width: 100%;
 }
-.BanderaAXA{
-  display: grid;
-  columns: 25%;
-}
 .item1 {
   grid-column-start: 1;
   grid-column-end: 3;
 }
+.imgBandera img{
+  width: 70%;
+}
+.PrecioBander{
+  width: 90%;
+  float: right;
+  height: 100px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 100px;
+  color: #009BDD;
+}
+.MarcaBandera img{
+  width: 100%;
+}
+.btn-consulta{
+  border-radius: 10px;
+  width: 100%;
+}
+
