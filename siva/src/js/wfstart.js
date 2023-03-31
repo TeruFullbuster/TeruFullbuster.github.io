@@ -97,6 +97,7 @@ $('#formInicial').on('submit', function (evt) {
     sNombre = document.getElementById('SegNombre').value
     ApPaterno = document.getElementById('ApPaterno').value
     ApMaterno = document.getElementById('ApMaterno').value
+    mail = document.getElementById('mail').value;
     rfc = document.getElementById('RFCC').value;
     CURP = document.getElementById('CURP').value;
     fnaci = document.getElementById('FNacimiento').value;
@@ -137,7 +138,7 @@ $('#formInicial').on('submit', function (evt) {
             "75":"+525559860998", //  Tel domicilio
             "84":"NO", //  Tienes otros descuentos via nomina
             "telefono_celular":"+52"+celular, 
-            "email":"terufullbustee@gmail.com"
+            "email": mail
         }
         
     });
@@ -174,14 +175,14 @@ $('#formInicial').on('submit', function (evt) {
   function crearcuenta() {
     id1 = localStorage.getItem('id')
         
-        var myHeaders = new Headers();
+    var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("company_code", "WlOEu7J");
     myHeaders.append("api_key", "3f6f8d46-858d-468c-a12a-9db510539f24");
 
     var raw = JSON.stringify({
       "login": "iortega@va-financiera.mx",
-      "idUnykoo": 232
+      "idUnykoo": id1
     });
 
     var requestOptions = {
@@ -235,7 +236,7 @@ myHeaders.append("api_key", "3f6f8d46-858d-468c-a12a-9db510539f24");
 
 var raw = JSON.stringify({
   "login": "iortega@va-financiera.mx",
-  "idUnykoo": 232,
+  "idUnykoo": id1,
   "nip": "" +nip +""
 });
 
@@ -272,7 +273,7 @@ var requestOptions = {
 
 var raw = JSON.stringify({
   "login": "iortega@va-financiera.mx",
-  "idUnykoo": 232,
+  "idUnykoo": id1,
   "nip": "" +nip +"" 
 });
 
