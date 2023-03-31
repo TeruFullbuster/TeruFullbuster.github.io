@@ -7,7 +7,7 @@ async function  inicioSession(){
   
         const result = await $.ajax({
           type: "POST",
-          url: "http://wssiva.sivaweb.mx/ControlUsuarios/IniciarSesion",
+          url: "https://wssiva.sivaweb.mx/ControlUsuarios/IniciarSesion",
           data: {API_USUARIO: {USUARIO:'ADMIN',CONTRASENIA:'Hola123'},USUARIO:{Correo:mail,Contrasenia:contrasenia1}},
           success: async  function (datos) {
   
