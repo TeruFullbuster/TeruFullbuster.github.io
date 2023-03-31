@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Si VA | El respaldo que necesitan tus colaboradores</title>
+	<link rel="icon" type="image/svg" href="src/img/logo-siva-color.svg">
+	<link rel="stylesheet" href="src/css/stylelp.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+	<section class="head" id="inicio">
+		<div>
+			<img src="src/img/logo-siva-color.png" alt="logo siva" width="200">
+		</div>
+		<div class="movil">
+			<img src="src/img/bars-solid.svg" alt="icono menu" width="80" style="width: 30px;" onclick="w3_open()">
+		</div>
+		<div class="desk">
+			<ul>
+				<li class="hvr-float-shadow" onclick="window.location.href='#funciona'">¿Cómo funciona?</li>
+				<li class="hvr-float-shadow" onclick="window.location.href='#registro'">¿Cómo me registro?</li>
+				<li class="hvr-float-shadow" onclick="window.location.href='#beneficios'">Beneficios</li>
+				<li class="hvr-float-shadow" onclick="window.location.href='#preguntas'">Preguntas frecuentes</li>
+				<li class="hvr-float-shadow" onclick="window.location.href='#contacto'">Contacto</li>
+			</ul>
+		</div>
+		<div class="w3-dropdown-hover desk">
+			<button class="w3-button">Inicia sesión </button>
+			<div class="w3-dropdown-content w3-bar-block">
+		      <a href="InicioSesion.html" class="w3-bar-item">Soy Colaborador</a>
+		      <a href="InicioSesion.html" class="w3-bar-item">Soy Administrador</a>
+		    </div>
+		</div>
+	</section>
+	<div class="w3-sidebar" style="display:none" id="mySidebar">
+		<ul class="menu">
+			<li onclick="w3_close('inicio')" style="font-size: 75px; color: var(--c-azul); font-weight: 900;">&times;</li>
+			<li onclick="w3_close('funciona')">¿Cómo funciona?</li>
+			<li  onclick="w3_close('registro')">¿Cómo me registro?</li>
+			<li  onclick="w3_close('beneficios')">Beneficios</li>
+			<li  onclick="w3_close('preguntas')">Preguntas frecuentes</li>
+			<li  onclick="w3_close('contacto')">Contacto</li>
+			<li><button class="btn-purple">Soy Colaborador</button></li>
+			<li><button class="btn-purple">Soy Administrador</button></li>
+		</ul>
+		
+	</div>
+	<section class="flex2">
+		<div>
+			<div class="text-center">
+				<h1><strong>Si VA</strong> el respaldo que necesitan tus colaboradores.</h1>
+				<p>Acceso a tus colaboradores al crédito para que lo usen en esas situaciones de <strong> emergencia</strong>  o para lograr aquellos planes que tienen en mente. </p>
+				<br>
+				<button onclick="window.location='InicioSesion.html'">¡Quiero registrarme!</button>
+			</div>
+		</div>
+		<div id="funciona">
+			<img src="src/img/Chica-siva-02.png" alt="el respaldo que necesitan tus colaboradores" class="desk">
+		</div>
+	</section>
+	<section class="flex3 bg-azul" >
+		<div>
+			<img src="src/img/Chico-siva-02-02.png" alt="como funciona" width="400" style="margin-top: -30px;">
+		</div>
+		<div>
+			<div class="vinetas">
+				<img src="src/img/icono-check-mark-01.svg" alt="icono checked" width="20">
+				<h4>Registra tu compañía y a tus colaboradores.</h4>
+			</div>
+			<div class="vinetas">
+				<img src="src/img/icono-check-mark-01.svg" alt="icono checked" width="20">
+				<h4>Deja que tu colaborador decida el monto y plazo de su crédito.</h4>
+			</div>
+			<div class="vinetas">
+				<img src="src/img/icono-check-mark-01.svg" alt="icono checked" width="20">
+				<h4>Todo a partir de nuestro sitio.</h4>
+			</div>
+			<div class="vinetas">
+				<img src="src/img/icono-check-mark-01.svg" alt="icono checked" width="20">
+				<h4>Mayor uso e interacción por parte de los colaboradores.</h4>
+			</div>
+		</div>
+		<div>
+			<button onclick="window.location='InicioSesion.html'" class="btn-white">¡Quiero registrarme!</button>
+		</div>
+	</section>
+	<section class="bg-gris registro" id="registro">
+		<h2>¿Cómo me registro <strong>en Si VA?</strong></h2>
+		<div class="registro-sec">
+			<div>
+				<div>
+					<img src="src/img/icono-crea-usuario-01.svg" alt="Crea un usuario" width="180">
+				</div>
+				<p>Crea un usuario en la plataforma de Si VA.</p>
+			</div>
+			<div>
+				<div>
+					<img src="src/img/icono-registra-01.svg" alt="Registra y da de alta tu empresa" width="180">
+				</div>
+				<p>Registra y da de alta tu empresa de forma gratuita.</p>
+			</div>
+			<div>
+				<div>
+					<img src="src/img/icono-sube-documentos.svg" alt="Sube los documentos" width="180">
+				</div>
+				<p>Sube los documentos que se te solicitan para validar tu empresa y empieza a disfrutar de los beneficios.</p>
+			</div>
+		</div>
+		<div style="text-align: center; padding: 20px 0">
+			<button onclick="window.location='InicioSesion.html'">¡Quiero registrarme!</button>
+		</div>
+	</section>
+	<section class="sec-white" id="beneficios">
+		<h2 class="h2-gris"><strong>Beneficios del crédito</strong> vía nómina y sin aval:</h2>
+		<div class="registro-sec">
+			<div>
+				<img src="src/img/icono-plazo.png" alt="icono plazo" width="80">
+				<p>Tú eliges el monto y el plazo seleccionado para tu comodidad financiera.</p>
+			</div>
+			<div>
+				<img src="src/img/icono-filas.png" alt="icono filas" width="80">
+				<p>No requieres de filas o trámites para el pago del crédito.</p>
+			</div>
+			<div>
+				<img src="src/img/icono-viajes.png" alt="icono viajes" width="80">
+				<p>Paga de deudas, adquiere un bien, remodela tu casa o hasta irte de vacaciones. </p>
+			</div>
+		</div>
+	</section>
+	<section class="sec-white">
+		<h2 class="h2-gris"><strong>Beneficios para </strong>tu empresa</h2>
+		<div class="flex2">
+			<div class="cards card-azul-d">
+				<div>
+					<img src="src/img/icono-no-tiene-cobro-01.svg" alt="No tiene un costo" width="70">
+				</div>
+				<p>No tiene un costo de soporte ni configuración.</p>
+			</div>
+			<div class="cards card-azul">
+				<div>
+					<img src="src/img/icono-norma-035.svg" alt="Cumple con la NOM 035" width="70">
+				</div>
+				<p>Cumple con la NOM 035 al reducir el estrés financiero de tus colaboradores.</p>
+			</div>
+			<div class="cards card-azul">
+				<div>
+					<img src="src/img/icono-reten.svg" alt="Atrae y retén el mejor talento" width="70">
+				</div>
+				<p>Atrae y retén el mejor talento,<br> reduce la rotación y aumenta el sentido de permanencia.</p>
+			</div>
+			<div class="cards card-azul-d">
+				<div>
+					<img src="src/img/icono-computadora.svg" alt="Reportes de datos y uso" width="70">
+				</div>
+				<p>Reportes de datos y uso, sin complicaciones ya que nos encargamos de todo el proceso operativo.</p>
+			</div>
+		</div>
+	</section>
+	<section class="bg-gris flex2" id="preguntas">
+		<div class="preguntas">
+			<h2>Preguntas <strong>frecuentes</strong></h2>
+			<div class="w3">
+				<div class="title-qs" onclick="myFunction('que-es','arr1')">
+					<h6>¿Que es SI VA?</h6>
+					<img src="src/img/chevron-down-solid.svg" alt="flecha abajo" width="25" id="arr1">
+				</div>
+				<div id="que-es" class="w3-hide">
+					<p>Plataforma digital que permite a tus colaborados tener acceso a crédito fácil y rápido.</p>
+				</div>
+			</div>
+			<div class="w3">
+				<div class="title-qs" onclick="myFunction('cuales','arr2')">
+					<h6>¿Qué empresas pueden registrarse? </h6>
+					<img src="src/img/chevron-down-solid.svg" alt="flecha abajo" width="25" id="arr2">
+				</div>
+				<div id="cuales" class="w3-hide">
+					<p>Cualquier empresa dentro de la república mexicana que quiera ofrecer a sus colaboradores beneficios. </p>
+				</div>
+			</div>
+			<div class="w3">
+				<div class="title-qs" onclick="myFunction('empresas','arr3')">
+					<h6>¿Cuáles son los requisitos para obtener un préstamo?</h6>
+					<img src="src/img/chevron-down-solid.svg" alt="flecha abajo" width="25" id="arr3">
+				</div>
+				<div id="empresas" class="w3-hide">
+					<p>∙Tener buen historial crediticio. Validaremos tu historial en Buró de Crédito. <br>∙Tener una cuenta de banco a tu nombre para depositarte tu crédito. <br>∙Recibos de nómina. </p>
+				</div>
+			</div>
+			<div class="w3">
+				<div class="title-qs" onclick="myFunction('hay','arr4')">
+					<h6>¿Cuál es monto que puedo pedir? </h6>
+					<img src="src/img/chevron-down-solid.svg" alt="flecha abajo" width="25" id="arr4">
+				</div>
+				<div id="hay" class="w3-hide">
+					<p>Desde $10,000 hasta $375,000 pesos. El monto aprobado dependerá de tu capacidad de pago y el plazo que elijas. </p>
+				</div>
+			</div>
+			<div class="w3">
+				<div class="title-qs" onclick="myFunction('banco','arr4')">
+					<h6>¿SI VA es un banco? </h6>
+					<img src="src/img/chevron-down-solid.svg" alt="flecha abajo" width="25" id="arr4">
+				</div>
+				<div id="banco" class="w3-hide">
+					<p>No, SI VA no es un banco. SI VA está respaldada por VA SERVICIOS y es una SOFOM no regulada.</p>
+				</div>
+			</div>
+		</div>
+		<div>
+			<img src="src/img/Chica-siva-2-03.png" alt="" id="chica3">
+		</div>
+	</section>
+	<section class="footer" id="contacto">
+		<div>
+			<img src="src/img/logo-siva-blanco.png" alt="logo siva" width="100">
+			<p>Comencemos con el contacto para que conozcas más sobre nuestros planes y beneficios para empresas.</p>
+		</div>
+		<div>
+			<p onclick="window.location.href='#inicio'">Inicio</p>
+			<p onclick="window.location.href='#funciona'">¿Cómo funciona SI VA?</p>
+			<p onclick="window.location.href='#registro'">¿Cómo registrarme en SI VA?</p>
+			<p onclick="window.location.href='#beneficios'">Beneficios para usar SI VA</p>
+			<p onclick="window.location.href='#preguntas'">Preguntas frecuentes</p>
+		</div>
+		<div>
+			<p>Términos y condiciones</p>
+			<br>
+			<p>Aviso de privacidad</p>
+			<br>
+			<p onclick="window.open('https://goo.gl/maps/aZoiD9ogSZtaHjVT6')">Carretera Picacho Ajusco 130, Desp. 803, Col. Jardines en la Montaña, Del. Tlalpan, Ciudad de México, C.P. 14210</p>
+			<p onclick="window.location.href='tel:5530987211'">55 3098 7211</p>
+		</div>
+	</section>
+	<section class="aviso">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi reprehenderit soluta vel eos nobis, debitis quis, inventore. Nostrum, quae doloribus ipsa fugiat pariatur omnis, asperiores corrupti, fuga voluptatem at, eaque. Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Voluptate architecto nulla voluptas animi quia numquam modi consectetur pariatur esse ut reprehenderit iste ea molestiae, minima mollitia corrupti vitae molestias tempora?</p>
+	</section>
+
+	<script>
+		function myFunction(id, arrow) {
+		  var x = document.getElementById(id);
+		   var a = document.getElementById(arrow);
+		  if (x.className.indexOf("w3-show") == -1) {
+		    x.className += " w3-show";
+		   	a.style.transform = "rotate(180deg)";
+		  } else { 
+		    x.className = x.className.replace(" w3-show", "");
+		    a.style.transform = "rotate(0deg)";
+		  }
+		}
+	</script>
+	<script>
+	function w3_open() {
+	  document.getElementById("mySidebar").style.display = "block";
+	}
+
+	function w3_close(menu) {
+	  document.getElementById("mySidebar").style.display = "none";
+	  window.location.href='#'+menu;
+	}
+</script>
+</body>
+</html>

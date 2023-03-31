@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../src/css/documentos.css" rel="stylesheet" type="text/css">
+    <link href="../src/css/Sesion.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="head" >
+        <img src="../src/img/logo.png" alt="logo SiVA" >
+        <h1 class="movil" id="bar" style="text-align: center;" onclick="openMenu()"><i class="fa-solid fa-bars"></i></h1>
+        <h1 style="display: none; text-align: center;" id="close" onclick="closeMenu();"><i class="fa-solid fa-xmark"></i></h1>
+    </section>
+    <section class="secciones">
+        <div id="menu"></div>        
+        <div >
+            <br>
+            <form id="formInicial">   
+        <div class="card card-w-title"></div>
+            <h1>Cuestionario Inicial.</h1>
+<div class=""><fieldset id="" class=""><legend class="">Datos generales</legend><div class=""></div>
+<div class=""><label for="">Nombre</label> <input disabled id="Nombre" name="Nombre" type="text" /> <label for="">Segundo Nombre</label> <input disabled id="SegNombre"   type="text" class=""   /></div>
+<br>
+<div class=""><label for=""> Apellido Paterno</label> <input disabled id="ApPaterno"   type="text" class=""   /> <label for=""> Apellido Materno</label> <input disabled id="ApMaterno"   type="text" class=""   /></div>
+<br>
+<div class=""><label for="">RFC</label> <input id="RFCC"   type="text" class=""   /> <label for="">CURP</label> <input id="CURP"   type="text" class=""   /></div>
+<br>
+<div class=""><label for=""> Fecha de Nacimiento</label> <input id="FNacimiento"   type="date" class=""   /><label for=""> Monto solicitado</label> <input disabled id="monto"   type="text" class=""   /> </div>
+<br>
+</div>
+<br>
+<div class=""><fieldset id="" class=""><legend class="">Domicilio</legend><div class=""><div class="">
+    <div class=""><label for=""> Dirección </label> <input id="Direccion"   type="text" class=""   /> <label for=""> Codigo Postal</label> <input id="cepe"   type="text" class=""   /></div>
+    <br>
+    
+
+    </div></div></div>
+    <br>
+    <div class=""><fieldset id="" class=""><legend class="">Datos de Contacto</legend><div class=""><div class="">
+    <div class=""><label for="">Telefono Celular</label> <input id="Celular"   type="text" class=""   /> <label for="">Correo Electronico</label> <input disabled id="mail" type="email" class=""   /></div>
+    <br>
+    <div class=""><label for="">Telefono Domicilio</label> <input id="Casa"   type="text" class=""   /></div>
+    <br>
+    </div></div></div>
+    <br>
+    <div class=""><fieldset id="" class=""><legend class="">Datos de Empresariales</legend><div class=""><div class=""></div>
+        <div class=""><label for="">Lugar de Trabajo</label> <input disabled id="LTRabajo"   type="text" class=""   /> <label for="">Sueldo Neto Mensual</label> <input disabled id="NetoMensual"   type="text" class=""   /></div>
+        <br>
+        <div class=""><label for="">¿Cuentas con otros ingresos?</label> <input id="OtrosIngre"   type="text" class=""   /> <label for="">Gastos Mensuales</label> <input id="GMensual"   type="text" class=""   /></div>
+        <br>
+        <div class=""><label for="">¿Otros Creditos?</label> <input id="OtrosCred"   type="text" class=""   /> <label for="">Tienes otros descuentos de Nomina</label> <input id="OtrosDesc"   type="text" class=""   /></div>
+    </div></div>
+    <button >Inicia tu proceso</button><button>Cancelar tu proceso</button>
+</form>   
+</body>
+</html>
+<script src ="../src/js/main.js"></script>
+<script src ="../src/js/wfstart.js"></script>
+
+<script>
+
+    function fechapermitida() {
+    
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1; //January is 0!
+    let yyyy = today.getFullYear() - 18;
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+    
+    today = yyyy + '-' + mm + '-' + dd;
+    
+    let minimum = "1920-01-01";
+    
+    let search_date = document.getElementById("FNacimiento");
+    
+    search_date.max = today;
+    search_date.min = minimum;
+    console.log("Si varga")
+    }
+    fechapermitida();
+    
+        </script>

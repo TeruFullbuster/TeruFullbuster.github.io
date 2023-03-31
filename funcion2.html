@@ -1,0 +1,120 @@
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/css/style-aseguradoras.css">
+<div class="Card">
+
+    <h1>Cotiza en segundo tu auto con una gran variedad de aseguradoras!</h1>
+<div class="Formulario">
+
+
+    <div class="loader">
+        <div class="div-load">
+            <img src="assets/img/loader.gif" width="200" />	
+        </div>
+      </div>
+    
+    <form id="multicoti" class="formu">
+        <div class="vehiculo">
+            <select name="Marca" id="slc-marcas" required>
+                <option value="">Selecciona la marca</option>
+                <option value="">Cargando... </option>
+                </select>
+                <select name="Modelo" id="slc-anio" required>
+                <option value="" >Selecciona el modelo</option>
+                <option value="">Cargando... </option>
+                </select>
+                <select name="Desc" id="slc-descripcion" required>
+                <option value="" >Selecciona la submarca</option>
+                <option value="">Cargando... </option>
+                </select>
+            
+        </div>
+        <br>
+        <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Apellido">
+            <input type="text" placeholder="Celular">
+            <input type="text" placeholder="Email">
+        <br>
+        <input type="text" id="cepe" placeholder="Introduce tu numero postal" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" maxlength="5" required>
+        <select type="Date" id="Fnaci" placeholder="Introduce tu Fecha de Nacimiento" required> </select>
+        
+    
+            <select id="genero" name="genero" style="background-color: #e0e0e0;" required>
+                <option value=""  selected disabled>Selecciona tu género</option>
+                <option value="0" >Masculino</option>
+                <option value="1" >Femenino</option>
+            </select>
+    
+        <p>Selecciona la versión especifica de tu vehiculo para una cotización precisa.</p>
+        <h1>Aseguradoras disponibles para ese modelo</h1>
+
+        <div  class="divAXA" id="divAXA1">
+            <select name="DescCAXA" id="slc-descripcionCompletaAXA" class="select1"></select>
+            <div id="BanderaAXA"class="BanderaAXA">
+                <div class="imgBandera"><img src="https://imgs.search.brave.com/kJQY3hE46O5HFL_4vNITEM4zUtnFzINEwQjO_lJyPzg/rs:fit:600:424:1/g:ce/aHR0cHM6Ly9zdDIu/ZGVwb3NpdHBob3Rv/cy5jb20vMTUwNzgx/OS82NjkwL3YvNDUw/L2RlcG9zaXRwaG90/b3NfNjY5MDQxODkt/c3RvY2staWxsdXN0/cmF0aW9uLWJsdWUt/Y2FyLWljb24tb24t/d2hpdGUuanBn"  alt=""> </div>
+                <div class="PrecioBander"><h3 class="item1">Precio: <br>$<span class="item1" id="DatoAXA"> </span><br>Anual </h3></div>
+                <div class="MarcaBandera"><a href="https://axaseguroauto.com/" target="_blank"><img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-AXA.png" alt=""></a></div>
+            </div>
+        </div>
+        <br>
+        <div class="divQua" id="divQua1">
+            <select name="DescCQua" id="slc-descripcionCompletaQua" class="select1"></select>
+            <div id="BanderaQua"class="BanderaQua">
+                <div class="imgBandera"><img src="https://imgs.search.brave.com/kJQY3hE46O5HFL_4vNITEM4zUtnFzINEwQjO_lJyPzg/rs:fit:600:424:1/g:ce/aHR0cHM6Ly9zdDIu/ZGVwb3NpdHBob3Rv/cy5jb20vMTUwNzgx/OS82NjkwL3YvNDUw/L2RlcG9zaXRwaG90/b3NfNjY5MDQxODkt/c3RvY2staWxsdXN0/cmF0aW9uLWJsdWUt/Y2FyLWljb24tb24t/d2hpdGUuanBn"  alt=""> </div>
+                <div class="PrecioBander"><h3 class="item1">Precio: <br>$<span class="item1" id="DatoAXA"> </span><br>Anual </h3></div>
+                <div class="MarcaBandera"><a href="https://axaseguroauto.com/" target="_blank"><img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-Qualitas.png" alt=""></a></div>
+            </div>
+        </div>
+        <br>
+        <div class="divGNP" id="divGNP1">
+            <select name="DescCGNP" id="slc-descripcionCompletaGNP" class="select1"></select>
+            <div id="BanderaGNP"class="BanderaGNP">
+                <div class="imgBandera"><img src="https://imgs.search.brave.com/kJQY3hE46O5HFL_4vNITEM4zUtnFzINEwQjO_lJyPzg/rs:fit:600:424:1/g:ce/aHR0cHM6Ly9zdDIu/ZGVwb3NpdHBob3Rv/cy5jb20vMTUwNzgx/OS82NjkwL3YvNDUw/L2RlcG9zaXRwaG90/b3NfNjY5MDQxODkt/c3RvY2staWxsdXN0/cmF0aW9uLWJsdWUt/Y2FyLWljb24tb24t/d2hpdGUuanBn"  alt=""> </div>
+                <div class="PrecioBander"><h3 class="item1">Precio: <br>$<span class="item1" id="DatoGNP"> </span><br>Anual </h3></div>
+                <div class="MarcaBandera"><a href="https://axaseguroauto.com/" target="_blank"><img src="https://segurointeligente.mx/Resources/images/logasegcomp/logo-GNP.png" alt=""></a></div>
+            </div>
+        </div>  
+        <br>
+        <button id="Consulta" class="btn-consulta">Consulta</button>
+    </form>
+    </div>
+</div>
+</div>
+
+
+<script>
+    		 function fechapermitida() {
+        localStorage.clear();
+        function algo(){
+            let stringtabla = '<option value=""  selected disabled>Selecciona tu edad</option>';
+  
+          for(let index = 19;index <= 80; index++){
+            let today = new Date();
+            let dd = today.getDate();
+            let mm = today.getMonth() + 1; //January is 0!
+            let yyyy = today.getFullYear() - index;
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+            today = yyyy + '-' + mm + '-' + dd;
+            
+            let fila = '<option value="'
+            fila += today + '"';
+            fila += ">";
+            fila +=  index + "</option>";
+           
+  
+            stringtabla += fila;
+            }
+            return stringtabla;
+        }
+            document.getElementById('Fnaci').innerHTML =  algo();
+        
+    } 
+    fechapermitida();
+</script>
+
+<script src="/assets/js/control.js"></script>

@@ -1,0 +1,31 @@
+.carrousel{
+    width: 90%;
+    max-width: 120em;
+    background-color: aliceblue;
+}
+.carrousel .grande{
+    width: 200%;
+    background-color: rgb(255, 14, 14);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.carrousel .elemento{
+    width: 200%;
+    background-color: rgb(255, 14, 14);
+    display: grid;
+   columns: 30% 30%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.carrousel .elemento .img{
+    width: calc(100% /2);
+    background-color: rgb(35, 221, 28);
+}
+.carrousel .puntos{
+
+}
+.carrousel .punto{
+
+}

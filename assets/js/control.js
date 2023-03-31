@@ -461,7 +461,7 @@ $(document).ready(function () {
                     }
             })
             }else{
-                alert("AXA no asegura ese vehiculo")
+                //alert("AXA no asegura ese vehiculo")
                 
             }
             if(cvicQua != null && cvicQua != "0"){
@@ -484,7 +484,7 @@ $(document).ready(function () {
                     }
                 })
             }else{
-                alert("Qualitas no asegura ese vehiculo")
+                //alert("Qualitas no asegura ese vehiculo")
                 
             }
             if(cvicGNP != null && cvicGNP != "0"){
@@ -507,7 +507,7 @@ $(document).ready(function () {
                     }
             })
             }else{
-                alert("GNP no asegura ese vehiculo")
+                //alert("GNP no asegura ese vehiculo")
                 
             }
 

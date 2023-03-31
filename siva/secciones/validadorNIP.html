@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../src/css/documentos.css" rel="stylesheet" type="text/css">
+    <link href="../src/css/Sesion.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="head" >
+        <img src="../src/img/logo.png" alt="logo SiVA" >
+        <h1 class="movil" id="bar" style="text-align: center;" onclick="openMenu()"><i class="fa-solid fa-bars"></i></h1>
+        <h1 style="display: none; text-align: center;" id="close" onclick="closeMenu();"><i class="fa-solid fa-xmark"></i></h1>
+    </section>
+   
+        <div style = "padding: 50px; color:rgb(0, 0, 0);" >
+            <br>
+       
+            <h1 style="text-align: center; ">Autorización para pedir consulta</h1>
+            <br>
+            <fieldset>
+                <p>Por este conducto autorizo expresamente a VA FINANCIERA, SAPI DE CV SOFOM ENR,	 para que por conducto de sus funcionarios facultados lleve a cabo investigaciones, sobre mi comportamiento crediticio en las Sociedades de Información Crediticia que estime conveniente.
+                    Así mismo, declaro que conozco la naturaleza y alcance de la información que se solicitará, del uso que hará de tal información y de que ésta podrá realizar consultas periódicas de mi historial crediticio, consintiendo que esta autorización se encuentre vigente por un período de 3 años contados a partir de la fecha de su expedición y en todo caso durante el tiempo que mantengamos relación jurídica.
+                    </p>
+            </fieldset>
+            
+<div ><fieldset><legend >Validación NIP</legend>
+    
+ 
+<div ><label style = "padding: 100px;">Ingresa el NIP</label> <input id="nipi"  name="nip1" type="text" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" maxlength="4"  minlength="4" required /> </div>
+<div ><label style = "padding: 100px;">Confirme el NIP</label> <input id="nipi2"  name="nip2" type="text" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" maxlength="4" minlength="4" required /> </div>
+<br>
+<br>   
+    <button id="boton" onclick="validadorNIP();"> Valida 1 </button>
+     
+
+</body>
+
+<script src ="../src/js/wfstart.js"></script>
+<script src ="../src/js/Sesion.js"></script>
+</html>

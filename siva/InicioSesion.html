@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/css/index.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <title>Inicia Sesion</title>
+</head>
+<body>
+
+  <div class="screen-1">
+    <br>
+    <div class ="logo"><img src="src/img/logo-siva-color.png" alt="asdad" width="300" height="241"></div>
+    <br>
+    <div class="email">
+      <label for="email">Direccion de Correo</label>
+      <div class="sec-2">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input id="mail" type="email" name="email" placeholder="Username@gmail.com"/>
+      </div>
+    </div>
+    <div class="password">
+      <label for="password">Contraseña</label>
+      <div class="sec-2">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input id="contrasenia" class="pas" type="password" name="password" placeholder="············"/>
+        <ion-icon class="show-hide" name="eye-outline"></ion-icon>
+      </div>
+    </div>
+    <button onclick="inicioSession();" class="login">Login </button>
+
+    <div class="footer"><span>Forgot Password?</span></div>
+  </div>
+ 
+    
+  
+</body>
+<script src="./src/js/index.js"></script>
+</html>

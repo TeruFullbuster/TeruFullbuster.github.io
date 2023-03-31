@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../src/css/documentos.css" rel="stylesheet" type="text/css">
+    <link href="../src/css/Sesion.css" rel="stylesheet" type="text/css">
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <title>Gestiona los documentos</title>
+
+</head>
+<body>
+        <section class="head" >
+            <img src="../src/img/logo.png" alt="logo SiVA" >
+            <h1 class="movil" id="bar" style="text-align: center;" onclick="openMenu()"><i class="fa-solid fa-bars"></i></h1>
+            <h1 style="display: none; text-align: center;" id="close" onclick="closeMenu();"><i class="fa-solid fa-xmark"></i></h1>
+        </section>
+        <section class="secciones">
+            <div w3-include-html="menu.html"></div> 
+       
+    <div class="">
+        <h2>¡<span id="nombreusuario"></span> Bienvenido a SiVA!</h2>
+        <div class="">
+            <div class="">
+    <select name="usuarios" id="usuarios" class="input_form" onclick="" style="width:200px">
+                    <option value="" >Selecciona un usuarios</option>
+    </select>
+    <br>
+    <br>
+    <div>
+    <label>Comprobante de domicilio</label>----   <a href=""><span id="comprobanteDomicilio" style="width:auto"></a></span>
+    <br>
+    <label>Comprobante Fiscal</label>----  <a href=""><span id="caratulaEdoC" style="width:auto"></a></span>
+    <br>
+    <label>Comprobante de Nomina</label> ---- <a href=""><span id="nominaC" style="width:auto"></a></span>
+    <br>
+    <label>Clabe Personal</label>----  <span id="clabePer" style="width:auto"></span>
+    <br>
+    </div>
+    
+    <br>
+    
+    
+    <br>
+    <br>
+    <button class="btn-purple" id="expediente" name="button" onclick="aver();">Busca el expediente</button>
+        </div>
+        
+        
+    </div>
+    
+            </div>
+        
+    <div class ="container-flex" id="usuarios">
+
+        </div>
+       
+<br>
+
+        
+    </div>
+    <br>
+    <br>
+    <div>
+        
+    </div>
+</section>
+    
+ 
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+      <script src ="../src/js/documentos.js"></script>
+      <script>
+        w3IncludeHTML();
+        </script>
+</html>
