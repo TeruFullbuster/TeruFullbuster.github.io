@@ -115,7 +115,7 @@ $('#formInicial').on('submit', function (evt) {
     
     var raw = JSON.stringify({ 
         "login": "iortega@va-financiera.mx",
-        "idUnykoo": 232,
+        "idUnykoo": id,
         "formName": "Credito de nomina PF",
         "data": {
             "primer_nombre":pNombre,
@@ -173,8 +173,9 @@ $('#formInicial').on('submit', function (evt) {
 
 
   function crearcuenta() {
-    id1 = localStorage.getItem('id')
-        
+    id1 = localStorage.getItem('idUnykoo')
+    id = Math.floor(id1)
+        console.log(id1)
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("company_code", "WlOEu7J");
@@ -182,9 +183,9 @@ $('#formInicial').on('submit', function (evt) {
 
     var raw = JSON.stringify({
       "login": "iortega@va-financiera.mx",
-      "idUnykoo": id1
+      "idUnykoo": id
     });
-
+ console.log(raw)
     var requestOptions = {
       method: 'POST',
       headers: myHeaders,
@@ -213,8 +214,8 @@ $('#formInicial').on('submit', function (evt) {
 
 function validadorNIP() {  
 
-const id = localStorage.getItem('id')
-
+  id1 = localStorage.getItem('idUnykoo')
+  id = Math.floor(id1)
 const nip = document.getElementById('nipi').value
 const nip2 = document.getElementById('nipi2').value
 console.log( id +nip + nip2)
@@ -233,13 +234,15 @@ if(nip === nip2){
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("company_code", "WlOEu7J");
 myHeaders.append("api_key", "3f6f8d46-858d-468c-a12a-9db510539f24");
-
+id1 = localStorage.getItem('idUnykoo')
+id = Math.floor(id1)
+nipB = Math.floor(nip)
 var raw = JSON.stringify({
   "login": "iortega@va-financiera.mx",
-  "idUnykoo": id1,
-  "nip": "" +nip +""
+  "idUnykoo": id,
+  "nip": nipB,
 });
-
+console.log(raw)
 var requestOptions = {
   method: 'POST',
   headers: myHeaders,
@@ -270,11 +273,13 @@ var requestOptions = {
   myHeaders.append("company_code", "WlOEu7J");
   myHeaders.append("api_key", "3f6f8d46-858d-468c-a12a-9db510539f24");
   myHeaders.append("Cookie", "JSESSIONID=82604B6E1BB08D8089CD0BF98893521D; oam.Flash.RENDERMAP.TOKEN=mryi36ejo");
-
+  id1 = localStorage.getItem('idUnykoo')
+  id = Math.floor(id1)
+  nipB = Math.floor(nip)
 var raw = JSON.stringify({
   "login": "iortega@va-financiera.mx",
-  "idUnykoo": id1,
-  "nip": "" +nip +"" 
+  "idUnykoo": id,
+  "nip": nipB,
 });
 
 var requestOptions = {

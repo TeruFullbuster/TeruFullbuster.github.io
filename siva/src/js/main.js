@@ -99,14 +99,14 @@ function closeMenu(){
 <script src ="../src/js/index.js"></script>
 `
 
-async function CerrarS(){  
+function CerrarS(){  
 
     var email = localStorage.getItem('email')
     var pass = localStorage.getItem('contra')
     console.log(email)
     $.ajax({
     type: "POST",
-    url: `http://wssiva.sivaweb.mx/ControlUsuarios/CerrarSesion`,
+    url: `https://wssiva.sivaweb.mx/ControlUsuarios/CerrarSesion`,
     data: {API_USUARIO: {USUARIO:'ADMIN' ,CONTRASENIA:'Hola123'},USUARIO:{Correo:email,Contrasenia:pass}},
     success: async function (datos) {
         console.log(datos)
